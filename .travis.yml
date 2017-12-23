@@ -3,5 +3,6 @@ install:
     - pip install pytest
 script:
     - cd src
+    - ls
     - py.test fmt.py
 
