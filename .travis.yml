@@ -1,6 +1,6 @@
 language: python
 install:
-    - pip istall pytest
+    - pip install pytest
 script:
     - py.test src/fmt.py
 
