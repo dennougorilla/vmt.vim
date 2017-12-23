@@ -1,8 +1,6 @@
-language: python
-install:
-    - pip install pytest
+language: viml
 script:
     - cd src
     - ls
-    - py.test fmt.py
+    - python fmt.py
 
