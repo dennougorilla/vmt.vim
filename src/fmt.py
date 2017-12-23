@@ -24,8 +24,11 @@ def vim_align(shiftwidth,lines):
             for k in range(max_word[j]-len(word_lst[i][j])+shiftwidth):
                 word_lst[i][j]=word_lst[i][j]+" "
 
-    print(word_lst) 
-
+    align_lines=[]
+    for l in word_lst:
+        align_lines.append("".join(l))
+    return align_lines
+    
 test_lines = ["    hi! DiffDete ctermbg=95 ctermfg=224 guibg=#53343b guifg=#ceb0b6",
         "    hi! DiffDelete ctermbg=95 ctermfg=224 guibg=#53343b guifg=#ceb0b6",
         "    hi! DiffDlete ctermbg=95 ctermfg=224 guibg=#53343b guifg=#ceb0b6",

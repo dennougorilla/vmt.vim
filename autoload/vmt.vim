@@ -5,14 +5,16 @@ pyfile <sfile>:h:h/src/fmt.py
 python import vim
 
 function! vmt#vmt() range
-    echo a:firstline
-    echo a:lastline
     python << EOF
-first=int(vim.eval('a:firstline'))-1
+first=int(vim.eval('a:firstline'))-1        
 last=int(vim.eval('a:lastline'))
-lines=vim.current.buffer
-lines=lines[first:last]
-vim_align(4,lines)
+shiftwidth=int(vim.eval('shiftwidth()'))
+b=vim.current.buffer
+lines=b[first:last]
+align_lines=vim_align(shiftwidth,lines)
+for i in range(first,last):
+    b[i]=align_lines[i-first]
+    vim.command("'<,'>"+"normal " + "==")
 EOF
 endfunction
 
