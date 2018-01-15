@@ -1,0 +1,6 @@
+language: viml
+script:
+    - cd src
+    - ls
+    - python fmt.py
+
